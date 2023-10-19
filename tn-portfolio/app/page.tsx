@@ -1,9 +1,13 @@
 import Image from 'next/image'
+import RootLayout from './layout'
+import Homes from '@/components/Home/page'
 
 export default function Home() {
   return (
-    <>
-    <div className='bg-blue-900'></div>
-    </>
+
+    <div>
+      <Homes/>
+    </div>
+
   )
 }
