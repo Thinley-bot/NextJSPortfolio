@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/page";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -13,10 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-cloud">
+    <html lang="en" className="bg-cloud bg-fixed">
       <body className="flex flex-row h-screen scroll-smooth mx-8 mt-8">
         <Navbar />
-       <main className="ml-[26%]">{children}</main>
+       <main className="ml-[27%]">{children}</main>
       </body>
     </html>
   );
