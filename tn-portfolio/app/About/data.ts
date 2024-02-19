@@ -2,7 +2,7 @@ const data = [
     {
       title: "ACHIEVEMENTS",
       items: [
-        "3rd Runner up in Inter Collegiate Programming Contest.",
+        "Third in Inter Collegiate Programming Contest.",
         "Winner in Security Bootcamp BTCIRT.",
         "Developer for Bhutan NLP application.",
       ],

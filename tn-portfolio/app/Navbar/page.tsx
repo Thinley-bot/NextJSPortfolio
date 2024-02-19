@@ -10,8 +10,8 @@ import {
   AiFillGithub,
   AiFillTwitterCircle,
 } from "react-icons/ai";
-import Link from "next/link";
 import { easeInOut, motion } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = () => {
   const [hoveredTitle, setHoveredTitle] = useState(null);
@@ -31,9 +31,9 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay:0.1 }}
-        className="h-32 w-32 rounded-full bg-white">
+        className="h-20 max-h-20 w-20 max-w-20 rounded-full bg-white">
           <Image
-            src="/assets/svg/profile2.svg"
+            src="/assets/img/profile_pic.png"
             alt="logo"
             height={128}
             width={128}
@@ -59,17 +59,17 @@ const Navbar = () => {
       </div>
 
       <ol className="h-auto w-full list-none flex flex-col text-black gap-2 justify-center items-center cursor-pointer">
-        {navbar_data.map((title) => (
+        {navbar_data.map((item,index) => (
           <motion.li
             initial={{opacity: 0 }}
             animate={{opacity: 1 }}
             transition={{ duration: 0.9, delay:1}}
-            key={title}
-            onMouseEnter={() => handleNavHover(title)}
+            key={item.title}
+            onMouseEnter={() => handleNavHover(item.title)}
             onMouseLeave={handleNavLeave}
-            className={hoveredTitle === title ? "underline text-[#8FBC8B]" : ""}
+            className={hoveredTitle === item.title ? "underline text-[#8FBC8B]" : ""}
           >
-            {title}
+            {item.title}
           </motion.li>
         ))}
       </ol>
