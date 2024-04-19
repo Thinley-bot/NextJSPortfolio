@@ -7,6 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import Chatbot from "@/components/chatbot";
 import {Montserrat} from 'next/font/google'
+import ChatBox from "@/components/chatDialog";
 
 export default function RootLayout({
   children,
@@ -14,6 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [showRiddle, setShowRiddle] = useState(true);
+  const [showChatbot, setShowChatbot] = useState(false);
+
+  const ChatbotClickHandler: () => void = () => {
+    setShowChatbot(!showChatbot);
+  }
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -22,6 +28,8 @@ export default function RootLayout({
 
     return () => clearTimeout(timeout);
   }, []);
+
+
 
   return (
     <html lang="en" className="bg-cloud bg-fixed font-[Montserrat]">
@@ -66,11 +74,16 @@ export default function RootLayout({
       ) : (
         <body className="relative flex flex-row h-screen scroll-smooth mx-8 mt-8 ">
           <Navbar />
-          <div className="fixed bottom-9 right-0 ">
-            <Chatbot/>
+          <div className="fixed bottom-9 right-0 " onClick={ChatbotClickHandler}>
+            <Chatbot />
           </div>
+          {showChatbot ?
+          <>
+          <div className="fixed bottom-24 w-[500px] right-16 z-50">
+          <ChatBox onClosechat={ChatbotClickHandler}/>
+          </div>
+          </> :""}
           <main className="ml-[27%]">{children}</main>
-          
         </body>
       )}
     </html>
