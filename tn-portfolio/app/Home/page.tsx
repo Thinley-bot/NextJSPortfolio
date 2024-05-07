@@ -7,7 +7,7 @@ import { AiFillGithub } from "react-icons/ai";
 
 
 const Homes = () => (
-  <div className="h-screen w-full flex flex-row items-center gap-10">
+  <div id="home" className="h-screen w-full flex flex-row items-center gap-10">
     <div className="flex flex-col gap-2">
       <div className="text-[24px]">
         <span>HELLO! 🙌 I'M</span>

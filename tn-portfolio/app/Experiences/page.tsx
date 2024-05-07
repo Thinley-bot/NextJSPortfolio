@@ -5,7 +5,7 @@ import { data } from './data';
 
 const Experiences = () => {
   return (
-    <>
+    <div id="experiences">
     <p className="font-semibold text-[30px] py-9">Experiences</p>
       <p className="font-thin text-[20px]  py-5 ">Career</p>
     <div className='px-5 h-auto flex flex-col gap-6'>
@@ -14,8 +14,8 @@ const Experiences = () => {
       ))}
      
     </div>
-    </>
-  );
+    </div>
+      );
 }
 
 export default Experiences;

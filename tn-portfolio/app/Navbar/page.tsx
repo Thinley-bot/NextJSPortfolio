@@ -25,7 +25,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed w-1/4 h-[90vh] bg-[#8FBC8B] bg-opacity-25 flex flex-col gap-3 justify-center items-center shadow-xl rounded-md py-7">
+    <nav className="fixed w-1/4 h-[90vh] bg-[#8FBC8B] bg-opacity-25 flex flex-col gap-3 justify-center items-center shadow-xl rounded-md py-7 ">
       <div className="flex flex-col justify-center items-center gap-3">
         <motion.div 
         initial={{ y: -100, opacity: 0 }}
@@ -60,6 +60,7 @@ const Navbar = () => {
 
       <ol className="h-auto w-full list-none flex flex-col text-black gap-2 justify-center items-center cursor-pointer">
         {navbar_data.map((item,index) => (
+           <Link href={item.dir}>
           <motion.li
             initial={{opacity: 0 }}
             animate={{opacity: 1 }}
@@ -71,6 +72,7 @@ const Navbar = () => {
           >
             {item.title}
           </motion.li>
+          </Link>
         ))}
       </ol>
 
