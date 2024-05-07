@@ -11,7 +11,7 @@ export const data=[{
     title:"FRONT-END",
     bg:"bg-yellow-300",
     shadow:"shadow-black",
-    skills:["HTML","CSS","React","NextJS","TypeScript","JavaScript"],
+    skills:["GraphQl","Restfull","React","NextJS","TypeScript","JavaScript"],
     icon:"/assets/svg/Frontend.svg",
 },
 {
@@ -19,6 +19,6 @@ export const data=[{
     title:"BACK-END",
     bg:"bg-blue-300",
     shadow:"shadow-blue-900",
-    skills:["tRPC","PostgreSQL","Prisma","Spring-MVC","Firebase"],
+    skills:["tRPC","PostgreSQL","Prisma","SpringBoot","RubyOnRials"],
     icon:"/assets/svg/backend.svg",
 },]

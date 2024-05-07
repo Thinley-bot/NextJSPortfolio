@@ -1,27 +1,27 @@
 const navbar_data = [
   {
     title:"Home",
-    dir:"Home"
+    dir:"#home"
   },
   {
     title:"About",
-    dir:"About"
+    dir:"#about"
   },
   {
     title:"Experiences",
-    dir:"Experiences"
+    dir:"#experiences"
   },
   {
     title:"Skills",
-    dir:"Skills"
+    dir:"#skills"
   },
   {
     title:"Project Works",
-    dir:"Works"
+    dir:"#works"
   },  
   {
     title:"Testament",
-    dir:"Testament"
+    dir:"#testament"
   }
 ];
 

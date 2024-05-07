@@ -29,7 +29,7 @@ const Testament = () => {
   };
 
   return (
-    <>
+    <div id="testament">
       <p className="text-[30px] py-9 font-semibold">Testament</p>
       <div className="h-auto bg-gray-200 bg-opacity-60 ">
         <p className="text-2xl">
@@ -57,7 +57,7 @@ const Testament = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
