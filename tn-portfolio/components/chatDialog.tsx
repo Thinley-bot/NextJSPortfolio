@@ -57,7 +57,7 @@ const ChatBox = ({ onClosechat, onPost, setDatas, response }: { onClosechat: any
         <div className="h-auto py-3 px-5 bg-white rounded-xl bg-opacity-90  whitespace-nowrap">
           <p
             className="inline-block chat-message cursor-pointer"
-            onClick={() => handleChatMessageClick("What are your long-term career goals?")}
+            onClick={() => handleChatMessageClick("What are your long-term goals?")}
           >
             What are your long-term career goals?
           </p>
