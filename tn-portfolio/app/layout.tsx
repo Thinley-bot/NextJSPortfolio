@@ -4,47 +4,13 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar/page";
 import "./globals.css";
 import { TypeAnimation } from "react-type-animation";
-import Chatbot from "@/components/chatbot";
-import ChatBox from "@/components/chatDialog";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [showRiddle, setShowRiddle] = useState(true);
-  const [showChatbot, setShowChatbot] = useState(false);
-  const [response, setResponse] = useState("");
-  const [data, setData] = useState("");
 
-  const [history, setHistory] = useState<string[]>([]);
-
-  const handleChildData = (data: any) => {
-    setData(data);
-  };
-
-  const handlePost = async () => {
-    console.log(data);
-    
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt: history.join("\n") }),
-    };
-
-    try {
-      const res = await fetch("http://127.0.0.1:11434/api/generate", requestOptions);
-      if (res.ok) {
-        const responseData = await res.json();
-        console.log(responseData);
-        setResponse(responseData.response);
-      } else {
-        console.error("Error:", res.status);
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
-  const ChatbotClickHandler = () => {
-    setShowChatbot(!showChatbot);
-  };
+  const path=usePathname();
+  console.log(path,"This is the path.")
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -55,7 +21,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className="bg-cloud bg-fixed font-[Montserrat]">
-      {showRiddle ? (
+         <head>
+        {/* Embed your script here */}
+        <script
+          type="application/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+           (function(w,d,s,o,f,js,fjs){w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);};(js=d.createElement(s)),(fjs=d.getElementsByTagName(s)[0]);js.id=o;js.src=f;js.async=1;js.referrerPolicy = "origin";fjs.parentNode.insertBefore(js,fjs);})(window,document,"script","copilot","https://script.copilot.live/v1/copilot.min.js?tkn=cat-i7os4zz5");
+copilot("init",{})
+            `,
+          }}
+        />
+      </head>
+      {showRiddle && path==="/Profile/" ?  (
         <body className="h-screen w-screen">
           <main className="relative flex flex-row h-full items-center justify-center">
             <div className="text-center">
@@ -72,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   fontSize: "2em",
                   fontWeight: "bold",
                   fontFamily: "serif",
-                  color: "orange", // Adjust the text color
+                  color: "orange", 
                   height: "5",
                 }}
               />
@@ -85,14 +63,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       ) : (
         <body className="relative flex flex-row h-screen scroll-smooth mx-8 mt-8 ">
           <Navbar />
-          <div className="fixed bottom-9 right-0 " onClick={ChatbotClickHandler}>
-            <Chatbot />
-          </div>
-          {showChatbot && (
-            <div className="fixed bottom-24 w-[500px] right-16 z-50">
-              <ChatBox onClosechat={ChatbotClickHandler} onPost={handlePost} setDatas={handleChildData} response={response} />
-            </div>
-          )}
           <main className="ml-[27%]">{children}</main>
         </body>
       )}

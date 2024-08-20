@@ -11,14 +11,14 @@ export const data=[{
     title:"FRONT-END",
     bg:"bg-yellow-300",
     shadow:"shadow-black",
-    skills:["GraphQl","Restfull","React","NextJS","TypeScript","JavaScript"],
-    icon:"/assets/svg/Frontend.svg",
+    skills:["React","NextJS","TypeScript","JavaScript"],
+    icon:"/assets/svg/Frontend.svg",    
 },
 {
     type:"skill",
     title:"BACK-END",
     bg:"bg-blue-300",
     shadow:"shadow-blue-900",
-    skills:["tRPC","PostgreSQL","Prisma","SpringBoot","RubyOnRials"],
+    skills:["tRPC","PostgreSQL","Prisma","SpringBoot","NestJs","TypeORM"],
     icon:"/assets/svg/backend.svg",
 },]

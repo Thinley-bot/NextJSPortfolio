@@ -10,6 +10,7 @@ const Works = () => {
       <div className="flex flex-wrap gap-8 w-full justify-center">
         {workData.map((i) => (
           <WorkCard
+            id={i.id}
             title={i.title}
             description={i.description}
             imageUrl={i.imgUrl}
